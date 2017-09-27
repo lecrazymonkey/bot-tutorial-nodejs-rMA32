@@ -25,7 +25,7 @@ function respond() {
   }
   else if(request.text && botRegexSDL.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("https://daddyleagues.com/mpb/schedules");
+    postMessage("https://daddyleagues.com/mpb/team/schedule");
     this.res.end();
   } 
   else if(request.text && botRegexProp.test(request.text)) {
