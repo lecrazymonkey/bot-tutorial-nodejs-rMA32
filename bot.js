@@ -17,9 +17,9 @@ function respond() {
     this.res.end();
   }
   else if(request.text && botsched.test(request.text)) {
-this.res.writeHead(200);
-postMessage("https://daddyleagues.com/mpb/schedules");
-this.res.end();
+    this.res.writeHead(200);
+    postMessage("https://daddyleagues.com/mpb/schedules");
+    this.res.end();
 }
  
   else if(request.text && botRegexSiege.test(request.text)) {
