@@ -23,9 +23,9 @@ function respond() {
     postMessage(cool());
     this.res.end();
   }
-  else if(request.text && botRegexblog.test(request.text)) {
+  else if(request.text && botRegexSDL.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("https://daddyleagues.com/mpb/blog");
+    postMessage("https://daddyleagues.com/mpb/schedules");
     this.res.end();
   } 
   else if(request.text && botRegexProp.test(request.text)) {
@@ -71,7 +71,7 @@ function respond() {
   else if(request.text && botRegexDL.test(request.text)) {
     this.res.writeHead(200);
     //postMessage("http://www.daddyleagues.com/maddenrating?name=&position=all&team="+request.text.substring(5,8));
-    postMessage("http://daddyleagues.com/mpb/team/"+request.text.substring(5,8)+"/depthchart");
+    postMessage("http://daddyleagues.com/nml18/team/"+request.text.substring(5,8)+"/depthchart");
     this.res.end();
   } 
   
@@ -92,23 +92,25 @@ function respond() {
   }
   else if(request.text && botRegexRules.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("");
+    postMessage("https://docs.google.com/document/d/1hSuEG7oplnx4IX6HGsMOjsWb9TCqC4-F1NLjuBz5PCM/edit");
     this.res.end();
   } 
- 
-  } 
-  else if(request.text && botRegexSDL.test(request.text)) {
+  else if(request.text && botRegexGTA.test(request.text)) {
     this.res.writeHead(200);
-    var req = request.text.substring(5,request.text.length);
-    var rep = req.replace(/ /,"+");
-    postMessage("http://daddyleagues.com/mpb/team/"+request.text.substring(5,8)+"/schedule");
+    postMessage("https://i.groupme.com/220x147.jpeg.a2dd2add32b14fff9e329535186d793c.large");
+    this.res.end();
+  } 
+  else if(request.text && botRegexSC.test(request.text)) {
+    this.res.writeHead(200);
+    
+    postMessage("http://daddyleagues.com/nml18/team/"+request.text.substring(5,8)+"/schedule");
     this.res.end();
   }
   else if(request.text && botRegexP.test(request.text)) {
     this.res.writeHead(200);
     var req = request.text.substring(5,request.text.length);
     var rep = req.replace(/ /,"+");
-    postMessage("http://daddyleagues.com/mpb/players?name="+rep+"&position=all&team=all");
+    postMessage("http://daddyleagues.com/nml18/players?name="+rep+"&position=all&team=all");
     
     this.res.end();
   }  
@@ -116,6 +118,11 @@ function respond() {
   else if(request.text && botRegexTw.test(request.text)) {
     this.res.writeHead(200);
     postMessage("http://www.twitch.tv/"+request.text.substring(8,request.text.length));
+    this.res.end();
+  } 
+  else if(request.text && botRegexSb.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("https://www.reddit.com/r/TheNiceMaddenLeague/");
     this.res.end();
   } 
   else if(request.text && botRegexSh.test(request.text)) {
